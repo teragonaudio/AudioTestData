@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(AudioTestData)
 
-set(installDir /usr/local/share/audiotestdata)
+set(installDir ${CMAKE_INSTALL_PREFIX}/share/audiotestdata)
 add_custom_target(install
   COMMAND ${CMAKE_COMMAND} -E
     make_directory ${installDir}
