@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(AudioTestData)
 
-set(installDir ${CMAKE_INSTALL_PREFIX}/share/audiotestdata)
+set(installDir ${CMAKE_INSTALL_PREFIX}/share)
 add_custom_target(install
   COMMAND ${CMAKE_COMMAND} -E
     make_directory ${installDir}
@@ -10,7 +10,7 @@ add_custom_target(install
   COMMAND ${CMAKE_COMMAND} -E
     copy_directory ${CMAKE_SOURCE_DIR}/midi ${installDir}/midi
   COMMAND ${CMAKE_COMMAND} -E
-    copy_directory ${CMAKE_SOURCE_DIR}/plugins ${installDir}/plugins
+    copy_directory ${CMAKE_SOURCE_DIR}/plugins ${installDir}/vst
   COMMAND ${CMAKE_COMMAND} -E
-    copy_directory ${CMAKE_SOURCE_DIR}/presets ${installDir}/presets
+    copy_directory ${CMAKE_SOURCE_DIR}/presets ${installDir}/vst
 )
